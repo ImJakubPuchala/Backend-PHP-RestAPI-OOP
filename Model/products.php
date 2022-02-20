@@ -43,6 +43,17 @@ class products{
             echo"Error in variable";
         }
     }
+
+    public function Delete($id)
+    {
+        if(is_numeric($id)){
+            $sql = new DataBase();
+            $sql->query("DELETE FROM product WHERE id = $id");
+            $sql->close();
+        }else{
+            echo"Error in variable";
+        }
+    }
 }
 
 ?>

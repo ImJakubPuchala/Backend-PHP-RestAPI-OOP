@@ -34,12 +34,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $comments = $_POST['comments'];
     }
     //insert
+    $products = new products();
     $products->Insert($name, $price, $comments);
 }
 
 // DELETE DATA
 if($_SERVER['REQUEST_METHOD'] == "DELETE"){
+    if($_POST['id']){
+        $id = $_POST['id'];
+    }
 
+    $products = new products();
+    $products->Delete($id);
 }
 
 // UPDATE DATA

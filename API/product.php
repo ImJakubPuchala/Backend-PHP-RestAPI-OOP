@@ -23,7 +23,18 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 
 // INSERT DATA
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-    
+    // CHECK IS SET VARIABLES 
+    if($_POST['name']){
+       $name = $_POST['name']; 
+    }
+    if($_POST['price']){
+        $price = $_POST['price'];
+    }
+    if($_POST['comments']){
+        $comments = $_POST['comments'];
+    }
+    //insert
+    $products->Insert($name, $price, $comments);
 }
 
 // DELETE DATA

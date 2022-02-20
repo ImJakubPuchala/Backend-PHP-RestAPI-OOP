@@ -32,6 +32,17 @@ class products{
         print_r(json_encode($this->objects));
         $sql->close();
     }
+
+    public function Insert($name, $price, $comments)
+    {
+        if($name && is_numeric($price) && $comments){
+            $sql = new DataBase();
+            $sql->query("INSERT INTO `product`(`name`, `price`, `comments`) VALUES ('$name',$price,'$comments')");
+            $sql->close();
+        }else{
+            echo"Error in variable";
+        }
+    }
 }
 
 ?>

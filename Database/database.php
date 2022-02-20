@@ -18,6 +18,7 @@ class DataBase{
         try{
             $this->pdo = new PDO("mysql:host=$this->host;dbname=$this->database", "$this->user", "$this->password");
         }catch(Exception $err){
+            http_response_code(400);
             die("Error with connection!");
         }
     }
@@ -27,6 +28,7 @@ class DataBase{
         try{
             $this->pdo = new PDO("mysql:host=$this->host;dbname=$this->database", "$this->user", "$this->password");
         }catch(Exception $err){
+            http_response_code(400);
             die("Error with connection!");
         }
     }
@@ -36,6 +38,7 @@ class DataBase{
         try{
             $this->pdo = null;
         }catch(Exception $err){
+            http_response_code(400);
             die("Error with close connection!");
         }
         
@@ -49,6 +52,7 @@ class DataBase{
             }
             return json_encode($result);
         }catch(Exception $err){
+            http_response_code(400);
             die("Error with fetch!");
         }
     }
@@ -57,6 +61,7 @@ class DataBase{
         try{
             $this->pdo->prepare($query)->execute();
         }catch(Exception $err){
+            http_response_code(400);
             die("Error with query!");
         }
     }

@@ -18,6 +18,7 @@ class products{
         //PRINT ARRAY
         print_r(json_encode($this->objects));
         $sql->close();
+        http_response_code(202);
     }
 
     public function Select($id)
@@ -31,6 +32,7 @@ class products{
         //PRINT ARRAY
         print_r(json_encode($this->objects));
         $sql->close();
+        http_response_code(202);
     }
 
     public function Insert($name, $price, $comments)
@@ -39,7 +41,9 @@ class products{
             $sql = new DataBase();
             $sql->query("INSERT INTO `product`(`name`, `price`, `comments`) VALUES ('$name',$price,'$comments')");
             $sql->close();
+            http_response_code(202);
         }else{
+            http_response_code(400);
             echo"Error in variable";
         }
     }
@@ -50,7 +54,9 @@ class products{
             $sql = new DataBase();
             $sql->query("DELETE FROM product WHERE id = $id");
             $sql->close();
+            http_response_code(202);
         }else{
+            http_response_code(400);
             echo"Error in variable";
         }
     }
@@ -61,7 +67,9 @@ class products{
             $sql = new DataBase();
             $sql->query("UPDATE `product` SET `name`='$name',`price`='$price',`comments`='$comments' WHERE `id`=$id");
             $sql->close();
+            http_response_code(202);
         }else{
+            http_response_code(400);
             echo"Error in variable";
         }
     }

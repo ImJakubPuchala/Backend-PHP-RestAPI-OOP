@@ -50,7 +50,22 @@ if($_SERVER['REQUEST_METHOD'] == "DELETE"){
 
 // UPDATE DATA
 if($_SERVER['REQUEST_METHOD'] == "PUT"){
-    
+    if($_POST['name']){
+       $name = $_POST['name']; 
+    }
+    if($_POST['price']){
+        $price = $_POST['price'];
+    }
+    if($_POST['comments']){
+        $comments = $_POST['comments'];
+    }
+
+    if($_POST['id']){
+        $id = $_POST['id'];
+    }
+
+    $products = new products();
+    $products->Update($id, $name, $price, $comments);
 }
 
 ?>

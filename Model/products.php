@@ -54,6 +54,17 @@ class products{
             echo"Error in variable";
         }
     }
+
+    public function Update($id, $name, $price, $comments)
+    {
+        if($name && is_numeric($price) && $comments && is_numeric($id)){
+            $sql = new DataBase();
+            $sql->query("UPDATE `product` SET `name`='$name',`price`='$price',`comments`='$comments' WHERE `id`=$id");
+            $sql->close();
+        }else{
+            echo"Error in variable";
+        }
+    }
 }
 
 ?>

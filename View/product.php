@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content
 header("Content-type:application/json");
 
 require_once("../Model/product.php");
-require_once("../Database/database.php");
+require_once("../Controller/database.php");
 require_once("../Model/products.php");
 
 //SELECT DATA FROM DB

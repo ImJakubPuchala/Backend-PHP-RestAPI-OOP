@@ -11,7 +11,7 @@
     <hr>
     <code>/view/product.php</code> - <b>GET</b> - select all data<br>
     <code>/view/product.php?id=(:id)</code> - <b>GET</b> - select data with id<br>
-    <code>/view/product.php</code> - <b>POST</b> - Add data<br>
+    <code>/view/product.php</code> - <b>POST</b> - add data<br>
     <code>/view/product.php?id=(:id)</code> - <b>DELETE</b> - delete data with id<br>
     <code>/view/product.php?id=(:id)&(...)</code> - <b>PUT</b> - edit data with id<br>
     <hr>

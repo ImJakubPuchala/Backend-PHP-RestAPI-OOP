@@ -11,7 +11,7 @@ class products{
     public function SelectAll()
     {
         $sql = new DataBase();
-        $data = json_decode($sql->fetch("select * from product"));
+        $data = json_decode($sql->fetch("SELECT * FROM `product`"));
         foreach($data as $row){
             array_push($this->objects, new product($row->id, $row->name, $row->price, $row->comments));
         }
@@ -23,9 +23,9 @@ class products{
 
     public function Select($id)
     {
-        // if(!is_numeric($id)) die("is NOT numeric!");
+        if(!is_numeric($id)) die("is NOT numeric!");
         $sql = new DataBase();
-        $data = json_decode($sql->fetch("select * from product where 'id' = $id"));
+        $data = json_decode($sql->fetch("SELECT * FROM `product` WHERE `id` = $id"));
         foreach($data as $row){
             array_push($this->objects, new product($row->id, $row->name, $row->price, $row->comments));
         }

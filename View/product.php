@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 // DELETE DATA
 if($_SERVER['REQUEST_METHOD'] == "DELETE"){
     if($_GET['id']){
-        $id = $_POST['id'];
+        $id = $_GET['id'];
     }
     $products = new products();
     $products->Delete($id);
@@ -49,17 +49,17 @@ if($_SERVER['REQUEST_METHOD'] == "DELETE"){
 
 // UPDATE DATA
 if($_SERVER['REQUEST_METHOD'] == "PUT"){
+    if($_GET['id']){
+        $id = $_GET['id'];
+    }
     if($_GET['name']){
-       $name = $_GET['name']; 
+        $name = $_GET['name']; 
     }
     if($_GET['price']){
         $price = $_GET['price'];
     }
     if($_GET['comments']){
         $comments = $_GET['comments'];
-    }
-    if($_GET['id']){
-        $id = $_GET['id'];
     }
 
     $products = new products();
